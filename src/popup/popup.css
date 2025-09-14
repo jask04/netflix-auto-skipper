@@ -1,0 +1,182 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #121212;
+    color: #f1f1f1;
+    margin: 0;
+    width: 300px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    border-bottom: 1px solid #222222;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 22px;
+    margin: 0;
+    color: #f1f1f1;
+    font-weight: 700;
+}
+
+.section {
+    background-color: #222222;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.section p {
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Toggle Switch Styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #444;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #8338ec;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+.slider.round {
+  border-radius: 28px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Checkbox Styles */
+#options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #444;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #555;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #8338ec;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Footer and GitHub Button Styles */
+.footer {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid #222222;
+}
+
+.github-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 15px;
+    border-radius: 8px;
+    background-color: rgb(225, 121, 81);
+    color: #121212;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.github-button:hover {
+    background-color: rgb(220, 108, 76);
+    transform: translateY(-1px);
+}
+
+.github-logo {
+    margin-right: 8px;
+    fill: #121212;
+}

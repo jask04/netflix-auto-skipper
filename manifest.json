@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Netflix Auto Skipper",
+  "version": "1.0",
+  "description": "Automatically skips Netflix intros and recaps.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.netflix.com/*"
+      ],
+      "js": [
+        "src/content.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "48": "src/icons/icon-48.png"
+    },
+    "default_title": "Netflix Auto Skipper",
+    "default_popup": "src/popup/popup.html"
+  },
+  "icons": {
+    "48": "src/icons/icon-48.png",
+    "96": "src/icons/icon-96.png"
+  }
+}
