@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Netflix Auto Skipper",
   "version": "1.0",
-  "description": "Automatically skips Netflix intros and recaps.",
+  "description": "Automatically skips Netflix intros, recaps, and credits.",
   "permissions": [
     "activeTab",
     "storage"
