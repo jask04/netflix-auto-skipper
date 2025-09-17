@@ -11,8 +11,7 @@ Automatically skips Netflix intros, recaps, and credits.
 - Individually toggle features
 
 ## Installation (Firefox)
-
-This extension is currently awaiting review for Firefox Browser Add-Ons.
+You can install the extension [here](https://addons.mozilla.org/en-US/firefox/addon/netflix-auto-skipper/)
 
 ## Installation (Testing)
 
