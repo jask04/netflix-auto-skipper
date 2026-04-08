@@ -5,44 +5,48 @@ let settings = {
   skipCredits: true,
 };
 
+let selector = '';
+
+function buildSelector() {
+  const parts = [];
+  if (settings.skipIntro) {
+    parts.push('[data-uia="player-skip-intro"]');
+  }
+  if (settings.skipRecap) {
+    parts.push('[data-uia="player-skip-recap"]');
+  }
+  if (settings.skipCredits) {
+    parts.push('.skip-credits a', '.watch-video--skip-content-button');
+  }
+  selector = parts.join(', ');
+}
+
 browser.storage.local.get(settings, (data) => {
   settings = data;
+  buildSelector();
 });
 
-browser.storage.onChanged.addListener((changes) => {
+browser.storage.onChanged.addListener(() => {
   browser.storage.local.get(settings, (data) => {
     settings = data;
+    buildSelector();
   });
 });
 
 const observer = new MutationObserver((mutations) => {
-  if (!settings.enabled) {
+  if (!settings.enabled || !selector) {
     return;
   }
 
-  mutations.forEach((mutation) => {
+  for (const mutation of mutations) {
     if (mutation.addedNodes.length) {
-      let selector = '';
-      if (settings.skipIntro) {
-        selector += '[data-uia="player-skip-intro"], ';
-      }
-      if (settings.skipRecap) {
-        selector += '[data-uia="player-skip-recap"], ';
-      }
-      if (settings.skipCredits) {
-        selector += '.skip-credits a, .watch-video--skip-content-button, ';
-      }
-
-      if (selector) {
-        // remove trailing comma and space
-        selector = selector.slice(0, -2);
-        const skipButton = document.querySelector(selector);
-        if (skipButton) {
-          skipButton.click();
-        }
+      const skipButton = document.querySelector(selector);
+      if (skipButton) {
+        skipButton.click();
+        return;
       }
     }
-  });
+  }
 });
 
 observer.observe(document.body, { childList: true, subtree: true });
