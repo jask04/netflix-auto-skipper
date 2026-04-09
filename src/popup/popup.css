@@ -1,53 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #121212;
-    color: #f1f1f1;
-    margin: 0;
-    width: 300px;
+  font-family: 'Inter', sans-serif;
+  background-color: #121212;
+  color: #f1f1f1;
+  width: 280px;
+  padding: 20px;
 }
 
 .container {
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.header {
-    text-align: center;
-    border-bottom: 1px solid #222222;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 22px;
-    margin: 0;
-    color: #f1f1f1;
-    font-weight: 700;
+.header h1 {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
 }
 
 .section {
-    background-color: #222222;
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  background-color: #222222;
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .section p {
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 16px;
+  font-size: 14px;
+  font-weight: 700;
 }
 
-/* Toggle Switch Styles */
+/* Toggle Switch */
 .switch {
   position: relative;
   display: inline-block;
   width: 50px;
-  height: 28px;
+  height: 26px;
 }
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -60,8 +59,8 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #444;
-  transition: .4s;
+  background-color: #555;
+  transition: 0.3s;
 }
 
 .slider:before {
@@ -69,114 +68,120 @@ h1 {
   content: "";
   height: 20px;
   width: 20px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: .4s;
+  left: 3px;
+  bottom: 3px;
+  background-color: #f1f1f1;
+  transition: 0.3s;
 }
 
 input:checked + .slider {
-  background-color: #8338ec;
+  background-color: #e50914;
 }
 
 input:checked + .slider:before {
-  transform: translateX(22px);
+  transform: translateX(24px);
 }
 
 .slider.round {
-  border-radius: 28px;
+  border-radius: 26px;
 }
 
 .slider.round:before {
   border-radius: 50%;
 }
 
-/* Checkbox Styles */
+/* Checkboxes */
 #options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .checkbox-container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    cursor: pointer;
-    font-size: 16px;
-    user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
 }
 
 .checkbox-container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
 .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 22px;
-    width: 22px;
-    background-color: #444;
-    border-radius: 6px;
-    transition: background-color 0.3s;
+  position: absolute;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #555;
+  border-radius: 5px;
+  transition: 0.2s;
 }
 
-.checkbox-container:hover input ~ .checkmark {
-    background-color: #555;
+.checkbox-container:hover .checkmark {
+  background-color: #666;
 }
 
 .checkbox-container input:checked ~ .checkmark {
-    background-color: #8338ec;
+  background-color: #e50914;
 }
 
 .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
+  content: "";
+  position: absolute;
+  display: none;
 }
 
 .checkbox-container input:checked ~ .checkmark:after {
-    display: block;
+  display: block;
 }
 
 .checkbox-container .checkmark:after {
-    left: 8px;
-    top: 4px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid #f1f1f1;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
-/* Footer and GitHub Button Styles */
+/* Footer */
 .footer {
-    text-align: center;
-    padding-top: 15px;
-    border-top: 1px solid #222222;
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
 }
 
 .github-button {
-    display: inline-flex;
-    align-items: center;
-    padding: 8px 15px;
-    border-radius: 8px;
-    background-color: rgb(225, 121, 81);
-    color: #121212;
-    text-decoration: none;
-    font-weight: 700;
-    transition: background-color 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #222222;
+  color: rgb(100, 149, 237);
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .github-button:hover {
-    background-color: rgb(220, 108, 76);
-    transform: translateY(-1px);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
 }
 
 .github-logo {
-    margin-right: 8px;
-    fill: #121212;
+  fill: #f1f1f1;
 }
